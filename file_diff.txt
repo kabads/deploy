@@ -1,0 +1,5 @@
+M     src/objects/Event.object
+A     src/objects/Trading_Event__c.object
+R     src/objects/ActiveScratchOrg.object
+M     src/profiles/Admin.profile
+D     src/reports/CACI_Imports/All_Closed.report
