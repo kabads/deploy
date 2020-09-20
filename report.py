@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # #################################################### #
-# ##                   Report generator             ## #
+# ##                Report generator                ## #
 # #################################################### #
 # ##               Reads file_diff.txt              ## #
 # ##                Creates two files               ## #
@@ -20,17 +20,19 @@ FILE_REMOVED = "removed.txt"
 def check_files_exist(f, a, r):
     # Check the file_diff.txt exists - if not, exit
     if os.path.exists(f) == 0:
-        print("File file_diff.txt not found - exiting.")
+        print("File {} not found - exiting.".format(FILE_TO_READ))
         sys.exit(0)
     # Check if file_added.txt exists - if it does confirm overwrite
     if os.path.exists(a) == 1:
-        print("File added.txt already exists; do you wish to overwrite?(y/n)")
+        print("File {} already exists; do you wish to "
+        "overwrite?(y/n)".format(FILE_ADDED))
         ans = input()
         if ans == "n":
             sys.exit(0)
     # Check if removed.txt exists - if it does confirm overwrite
     if os.path.exists(r) == 1:
-        print("File removed.txt already exists; do you wish to overwrite?(y/n)")
+        print("File {} already exists; do you wish to "
+        "overwrite?(y/n)".format(FILE_REMOVED))
         ans = input()
         if ans == "n":
             sys.exit(0)
