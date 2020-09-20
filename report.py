@@ -38,18 +38,18 @@ def check_files_exist(f, a, r):
     # Check if file_added.txt exists - if it does confirm overwrite
     if os.path.exists(a) == 1:
         print("File {} already exists; do you wish to "
-        "overwrite?(y/n)".format(FILE_ADDED))
+              "overwrite?(y/n)".format(FILE_ADDED))
         ans = input()
         if ans == "n":
             sys.exit(0)
     # Check if removed.txt exists - if it does confirm overwrite
     if os.path.exists(r) == 1:
         print("File {} already exists; do you wish to "
-        "overwrite?(y/n)".format(FILE_REMOVED))
+              "overwrite?(y/n)".format(FILE_REMOVED))
         ans = input()
         if ans == "n":
             sys.exit(0)
-    # Check if the output directories exist. If not, create them. 
+    # Check if the output directories exist. If not, create them.
     if os.path.exists("deployPackage") == 0:
         os.mkdir("deployPackage")
     if os.path.exists("deployPackage/added") == 0:
@@ -80,8 +80,9 @@ def read_files(f, a, r):
 
 def main():
     check_files_exist(FILE_TO_READ, FILE_ADDED, FILE_REMOVED)
-    file_to_read, file_added, file_removed = open_files(FILE_TO_READ, 
-            FILE_ADDED, FILE_REMOVED)
+    file_to_read, file_added, file_removed = open_files(FILE_TO_READ,
+                                                        FILE_ADDED,
+                                                        FILE_REMOVED)
     read_files(file_to_read, file_added, file_removed)
     close_files(file_to_read, file_added, file_removed)
 
