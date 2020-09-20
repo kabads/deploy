@@ -6,6 +6,7 @@
 # ##               Reads file_diff.txt              ## #
 # ##                Creates two files               ## #
 # ##              added.txt & removed.txt           ## #
+# ##    and moves files deepending on the tag       ## #
 # #################################################### #
 
 import os
