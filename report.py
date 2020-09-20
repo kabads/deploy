@@ -68,13 +68,13 @@ def read_files(f, a, r):
             # Write just the filename to the FILE_ADDED file.
             a.write(filename + "\n")
             # Move the file to deployPackage/added
-            shutil.copy(os.path.join(directory, filename),
+            shutil.move(os.path.join(directory, filename),
                         "deployPackage/added/" + filename)
         elif element[0] == "R" or element[0] == "D":
             (directory, filename) = list(os.path.split(element[1]))
             r.write(filename + "\n")
             # Move the file to deployPackage/removed
-            shutil.copy(os.path.join(directory, filename),
+            shutil.move(os.path.join(directory, filename),
                         "deployPackage/removed/" + filename)
 
 
