@@ -63,7 +63,7 @@ def read_files(f, a, r):
     # Open the files, and read the first character
     for line in f:
         element = line.split()
-        if element[0] == "M" or element[0] == "A":
+        if element[0] in ["M", "A"]:
             # Split the directory from the filename
             (directory, filename) = list(os.path.split(element[1]))
             # Write just the filename to the FILE_ADDED file.
@@ -71,7 +71,7 @@ def read_files(f, a, r):
             # Move the file to deployPackage/added
             shutil.move(os.path.join(directory, filename),
                         "deployPackage/added/" + filename)
-        elif element[0] == "R" or element[0] == "D":
+        elif element[0] in ["R", "D"]:
             (directory, filename) = list(os.path.split(element[1]))
             r.write(filename + "\n")
             # Move the file to deployPackage/removed
